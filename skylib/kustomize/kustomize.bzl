@@ -171,7 +171,7 @@ def _kustomize_impl(ctx):
         kustomization_yaml += "configMapGenerator:\n"
         for cmname in maps:
             kustomization_yaml += "- name: {}\n".format(cmname)
-            kustomization_yaml += "  files:\n"
+            kustomization_yaml += "  envs:\n"
             for f in maps[cmname]:
                 kustomization_yaml += "  - {}/{}\n".format(upupup, f.path)
 

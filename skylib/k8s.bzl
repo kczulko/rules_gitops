@@ -78,7 +78,8 @@ def _image_pushes(name_suffix, images, image_registry, image_repository, image_r
     for image_name in images:
         image = images[image_name]
         rule_name_parts = []
-        rule_name_parts.append(image_registry)
+        if image_registry != None:
+            rule_name_parts.append(image_registry)
         if image_repository:
             rule_name_parts.append(image_repository)
         rule_name_parts.append(image_name)
